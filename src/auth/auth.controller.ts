@@ -3,7 +3,6 @@ import {
   Controller,
   Get,
   HttpCode,
-  HttpException,
   HttpStatus,
   Post,
   UsePipes,
@@ -11,7 +10,6 @@ import {
 } from '@nestjs/common';
 import { AuthDTO } from 'src/dto/auth.dto';
 import { AuthService } from './auth.service';
-import { error } from 'console';
 
 @Controller('auth')
 export class AuthController {
