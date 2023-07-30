@@ -1,0 +1,6 @@
+build:
+  skip: yes
+
+run:
+  image: fominykhartur/pyshop-internbackend:latest
+  containerPort: 3000
