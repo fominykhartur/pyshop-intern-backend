@@ -1,8 +1,11 @@
 import {
   Body,
   Controller,
+  Get,
   HttpCode,
   HttpStatus,
+  Param,
+  ParseIntPipe,
   Post,
   UsePipes,
   ValidationPipe,
@@ -19,5 +22,10 @@ export class UserController {
   @Post('/updateInfo')
   async updateInfo(@Body() dto: UserDTO) {
     return await this.userService.updateInfo(dto);
+  }
+
+  @Get(':id')
+  async getUserInfo(@Param('id', ParseIntPipe) id: number) {
+    return await this.userService.getUserInfo(id);
   }
 }

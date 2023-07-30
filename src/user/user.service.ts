@@ -17,4 +17,10 @@ export class UserService {
       },
     });
   }
+
+  async getUserInfo(id: number) {
+    return await this.databaseService.user.findUnique({
+      where: { id: id },
+    });
+  }
 }
