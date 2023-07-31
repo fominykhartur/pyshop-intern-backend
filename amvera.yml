@@ -3,4 +3,4 @@ build:
 
 run:
   image: fominykhartur/pyshop-internbackend:latest
-  containerPort: 3000
+  containerPort: 80

@@ -21,6 +21,9 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
 
+ENV DATABASE_URL=file:./dev.db
+ENV JWT_SECRET=PYSHOP
+ 
 EXPOSE 80
 # 👇 new migrate and start app script
 CMD [  "npm", "run", "start:migrate:prod" ]
