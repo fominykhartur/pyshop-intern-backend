@@ -23,7 +23,7 @@ export class UserController {
   @UsePipes(new ValidationPipe())
   @Post('/updateInfo')
   async updateInfo(@Req() req: Request, @Body() dto: UserDTO) {
-    console.log(req.cookies);
+    // console.log(req.cookies);
     return await this.userService.updateInfo(dto);
   }
 
