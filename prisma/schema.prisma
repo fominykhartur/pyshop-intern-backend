@@ -19,6 +19,8 @@ model User {
   telNumber String?
   address   String?
   info      String?
+  refreshToken String?
+  refreshTokenExpires DateTime?
 }
 
 //Имя, Телефон, Адрес, Информация о себе

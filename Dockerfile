@@ -1,13 +1,10 @@
 FROM node:16.20-alpine AS builder
 
-# Create app directory
 WORKDIR /app
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 COPY prisma ./prisma/
 
-# Install app dependencies
 RUN npm install
 
 COPY . .
@@ -25,6 +22,6 @@ ENV DATABASE_URL=file:./dev.db
 ENV JWT_SECRET=PYSHOP
  
 EXPOSE 80
-# 👇 new migrate and start app script
+
 CMD [  "npm", "run", "start:migrate:prod" ]
 

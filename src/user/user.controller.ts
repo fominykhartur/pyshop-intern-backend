@@ -7,11 +7,13 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Req,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserDTO } from 'src/dto/user.dto';
+import { Request } from 'express';
 
 @Controller('user')
 export class UserController {
@@ -20,7 +22,8 @@ export class UserController {
   @HttpCode(HttpStatus.OK)
   @UsePipes(new ValidationPipe())
   @Post('/updateInfo')
-  async updateInfo(@Body() dto: UserDTO) {
+  async updateInfo(@Req() req: Request, @Body() dto: UserDTO) {
+    console.log(req.cookies);
     return await this.userService.updateInfo(dto);
   }
 
