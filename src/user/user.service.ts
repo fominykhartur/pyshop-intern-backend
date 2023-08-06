@@ -7,7 +7,6 @@ export class UserService {
   constructor(private readonly databaseService: DatabaseService) {}
 
   async updateInfo(dto: UserDTO) {
-    console.log(dto);
     return await this.databaseService.user.update({
       where: { id: dto.id },
       data: {
