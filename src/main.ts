@@ -17,6 +17,6 @@ async function bootstrap() {
     ],
     exposedHeaders: ['X-Set-Cookie', 'Set-Cookie'],
   });
-  await app.listen(3000, '192.168.1.246');
+  await app.listen(3000);
 }
 bootstrap();
