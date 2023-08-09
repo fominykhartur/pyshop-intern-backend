@@ -45,9 +45,9 @@ export class AuthController {
     res.cookie('refreshToken', refresh_token.refresh_token, {
       expires: refresh_token.expires,
       httpOnly: true,
-      path: '/',
-      sameSite: 'none',
-      secure: true,
+      // path: '/',
+      // sameSite: 'none',
+      // secure: true,
     });
     return accessToken;
   }
@@ -70,7 +70,7 @@ export class AuthController {
       ),
       path: '/',
       sameSite: 'none',
-      secure: true,
+      // secure: true,
     });
     return accessToken;
   }
