@@ -12,9 +12,11 @@ async function bootstrap() {
       'https://pyshop-intern-frontend.vercel.app',
       'http://192.168.1.246:9000',
       'http://localhost:9000',
+      'http://194.58.90.28:9000',
+      'http://194.58.90.28',
     ],
     exposedHeaders: ['X-Set-Cookie', 'Set-Cookie'],
   });
-  await app.listen(3000);
+  await app.listen(3000, '192.168.1.246');
 }
 bootstrap();
